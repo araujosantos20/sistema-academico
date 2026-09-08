@@ -30,10 +30,11 @@ public class TelaPrincipal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtNome;
 	private JTextField txtEmail;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtEndereco;
+	private JTextField txtMunicipio;
+	private JTextField txtRgmCurso;
 
 	/**
 	 * Launch the application.
@@ -143,11 +144,11 @@ public class TelaPrincipal extends JFrame {
 		txtData.setBounds(253, 100, 170, 33);
 		pnlDadosPessoais.add(txtData);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		textField_1.setColumns(10);
-		textField_1.setBounds(384, 29, 472, 33);
-		pnlDadosPessoais.add(textField_1);
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtNome.setColumns(10);
+		txtNome.setBounds(384, 29, 472, 33);
+		pnlDadosPessoais.add(txtNome);
 		
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setHorizontalAlignment(SwingConstants.CENTER);
@@ -179,11 +180,11 @@ public class TelaPrincipal extends JFrame {
 		txtEmail.setBounds(109, 179, 747, 33);
 		pnlDadosPessoais.add(txtEmail);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		textField_2.setColumns(10);
-		textField_2.setBounds(109, 252, 747, 33);
-		pnlDadosPessoais.add(textField_2);
+		txtEndereco = new JTextField();
+		txtEndereco.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtEndereco.setColumns(10);
+		txtEndereco.setBounds(109, 252, 747, 33);
+		pnlDadosPessoais.add(txtEndereco);
 		
 		JLabel lblEndereco = new JLabel("End.");
 		lblEndereco.setHorizontalAlignment(SwingConstants.CENTER);
@@ -197,11 +198,11 @@ public class TelaPrincipal extends JFrame {
 		lblMunicipio.setBounds(32, 321, 97, 33);
 		pnlDadosPessoais.add(lblMunicipio);
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		textField_3.setColumns(10);
-		textField_3.setBounds(152, 321, 205, 33);
-		pnlDadosPessoais.add(textField_3);
+		txtMunicipio = new JTextField();
+		txtMunicipio.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtMunicipio.setColumns(10);
+		txtMunicipio.setBounds(152, 321, 205, 33);
+		pnlDadosPessoais.add(txtMunicipio);
 		
 		JLabel lblEstado = new JLabel("UF");
 		lblEstado.setHorizontalAlignment(SwingConstants.CENTER);
@@ -209,11 +210,11 @@ public class TelaPrincipal extends JFrame {
 		lblEstado.setBounds(380, 321, 43, 33);
 		pnlDadosPessoais.add(lblEstado);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"SP", "RJ", "ES", "MG"}));
-		comboBox.setBounds(434, 321, 75, 34);
-		pnlDadosPessoais.add(comboBox);
+		JComboBox cmbEstado = new JComboBox();
+		cmbEstado.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		cmbEstado.setModel(new DefaultComboBoxModel(new String[] {"SP", "RJ", "ES", "MG"}));
+		cmbEstado.setBounds(434, 321, 75, 34);
+		pnlDadosPessoais.add(cmbEstado);
 		
 		JLabel lblCelular = new JLabel("Celular");
 		lblCelular.setHorizontalAlignment(SwingConstants.CENTER);
@@ -221,10 +222,10 @@ public class TelaPrincipal extends JFrame {
 		lblCelular.setBounds(531, 321, 83, 33);
 		pnlDadosPessoais.add(lblCelular);
 		
-		JFormattedTextField formattedTextField = new JFormattedTextField(new MaskFormatter("(##) #####-####"));
-		formattedTextField.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		formattedTextField.setBounds(620, 321, 236, 33);
-		pnlDadosPessoais.add(formattedTextField);
+		JFormattedTextField txtCelular = new JFormattedTextField(new MaskFormatter("(##) #####-####"));
+		txtCelular.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtCelular.setBounds(620, 321, 236, 33);
+		pnlDadosPessoais.add(txtCelular);
 		
 		JButton btnSalvaAluno = new JButton("Salvar");
 		btnSalvaAluno.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -247,50 +248,80 @@ public class TelaPrincipal extends JFrame {
 		
 		JLabel lblCurso = new JLabel("Curso");
 		lblCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblCurso.setBounds(66, 34, 57, 27);
+		lblCurso.setBounds(65, 101, 57, 27);
 		pnlCurso.add(lblCurso);
 		
 		JComboBox cmbCurso = new JComboBox();
 		cmbCurso.setModel(new DefaultComboBoxModel(new String[] {"Análise e Desenvolvimento de Sistemas", "Ciências da Computação"}));
 		cmbCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		cmbCurso.setBounds(183, 34, 666, 33);
+		cmbCurso.setBounds(182, 95, 666, 33);
 		pnlCurso.add(cmbCurso);
 		
 		JComboBox cmbCampus = new JComboBox();
 		cmbCampus.setModel(new DefaultComboBoxModel(new String[] {"Tatuapé", "Santo André", "Villa-Lobos", "Liberdade"}));
 		cmbCampus.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		cmbCampus.setBounds(183, 111, 666, 33);
+		cmbCampus.setBounds(181, 158, 666, 33);
 		pnlCurso.add(cmbCampus);
 		
 		JLabel lblCampus = new JLabel("Campus");
 		lblCampus.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblCampus.setBounds(67, 114, 80, 27);
+		lblCampus.setBounds(65, 161, 80, 27);
 		pnlCurso.add(lblCampus);
 		
 		JLabel lblPeriodo = new JLabel("Periodo");
 		lblPeriodo.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblPeriodo.setBounds(66, 181, 73, 27);
+		lblPeriodo.setBounds(65, 228, 73, 27);
 		pnlCurso.add(lblPeriodo);
 		
 		JRadioButton rdbMatutino = new JRadioButton("Matutino");
 		rdbMatutino.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		rdbMatutino.setBounds(183, 177, 111, 35);
+		rdbMatutino.setBounds(182, 224, 111, 35);
 		pnlCurso.add(rdbMatutino);
 		
 		JRadioButton rdbVespertino = new JRadioButton("Vespertino");
 		rdbVespertino.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		rdbVespertino.setBounds(370, 177, 131, 35);
+		rdbVespertino.setBounds(369, 224, 131, 35);
 		pnlCurso.add(rdbVespertino);
 		
 		JRadioButton rdbNoturno = new JRadioButton("Noturno");
 		rdbNoturno.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		rdbNoturno.setBounds(572, 177, 105, 35);
+		rdbNoturno.setBounds(571, 224, 105, 35);
 		pnlCurso.add(rdbNoturno);
 		
 		ButtonGroup rdgPeriodo = new ButtonGroup();
 		rdgPeriodo.add(rdbMatutino);
 		rdgPeriodo.add(rdbVespertino);
 		rdgPeriodo.add(rdbNoturno);
+		
+		JLabel lblRgmCurso = new JLabel("RGM");
+		lblRgmCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblRgmCurso.setBounds(65, 39, 46, 27);
+		pnlCurso.add(lblRgmCurso);
+		
+		txtRgmCurso = new JTextField();
+		txtRgmCurso.setBounds(182, 33, 318, 33);
+		pnlCurso.add(txtRgmCurso);
+		txtRgmCurso.setColumns(10);
+		
+		JButton btnSalvarAluno = new JButton("Salvar");
+		btnSalvarAluno.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSalvarAluno.setBounds(65, 357, 150, 35);
+		pnlCurso.add(btnSalvarAluno);
+		
+		JButton btnAlterarCurso = new JButton("Alterar");
+		btnAlterarCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnAlterarCurso.setBounds(270, 357, 150, 35);
+		pnlCurso.add(btnAlterarCurso);
+		
+		JButton btnExcluirAluno = new JButton("Excluir");
+		btnExcluirAluno.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnExcluirAluno.setBounds(483, 357, 150, 35);
+		pnlCurso.add(btnExcluirAluno);
+		
+		JButton btnSair = new JButton("Sair");
+		btnSair.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSair.setBounds(698, 357, 150, 35);
+		pnlCurso.add(btnSair);
 		
 		JPanel pnlNotas = new JPanel();
 		tabbedPane.addTab("Notas e Faltas", null, pnlNotas, null);
