@@ -21,7 +21,9 @@ import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JRadioButton;
 
 public class TelaPrincipal extends JFrame {
 
@@ -208,7 +210,8 @@ public class TelaPrincipal extends JFrame {
 		pnlDadosPessoais.add(lblEstado);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "SP", "RJ", "ES", "MG"}));
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"SP", "RJ", "ES", "MG"}));
 		comboBox.setBounds(434, 321, 75, 34);
 		pnlDadosPessoais.add(comboBox);
 		
@@ -228,14 +231,66 @@ public class TelaPrincipal extends JFrame {
 		btnSalvaAluno.setBounds(30, 385, 162, 33);
 		pnlDadosPessoais.add(btnSalvaAluno);
 		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnBuscar.setBounds(232, 385, 162, 33);
+		pnlDadosPessoais.add(btnBuscar);
+		
 		JButton btnLimpar = new JButton("Limpar");
 		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		btnLimpar.setBounds(232, 385, 162, 33);
+		btnLimpar.setBounds(434, 385, 162, 33);
 		pnlDadosPessoais.add(btnLimpar);
 		
 		JPanel pnlCurso = new JPanel();
 		tabbedPane.addTab("Curso", null, pnlCurso, null);
 		pnlCurso.setLayout(null);
+		
+		JLabel lblCurso = new JLabel("Curso");
+		lblCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblCurso.setBounds(66, 34, 57, 27);
+		pnlCurso.add(lblCurso);
+		
+		JComboBox cmbCurso = new JComboBox();
+		cmbCurso.setModel(new DefaultComboBoxModel(new String[] {"Análise e Desenvolvimento de Sistemas", "Ciências da Computação"}));
+		cmbCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		cmbCurso.setBounds(183, 34, 666, 33);
+		pnlCurso.add(cmbCurso);
+		
+		JComboBox cmbCampus = new JComboBox();
+		cmbCampus.setModel(new DefaultComboBoxModel(new String[] {"Tatuapé", "Santo André", "Villa-Lobos", "Liberdade"}));
+		cmbCampus.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		cmbCampus.setBounds(183, 111, 666, 33);
+		pnlCurso.add(cmbCampus);
+		
+		JLabel lblCampus = new JLabel("Campus");
+		lblCampus.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblCampus.setBounds(67, 114, 80, 27);
+		pnlCurso.add(lblCampus);
+		
+		JLabel lblPeriodo = new JLabel("Periodo");
+		lblPeriodo.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblPeriodo.setBounds(66, 181, 73, 27);
+		pnlCurso.add(lblPeriodo);
+		
+		JRadioButton rdbMatutino = new JRadioButton("Matutino");
+		rdbMatutino.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		rdbMatutino.setBounds(183, 177, 111, 35);
+		pnlCurso.add(rdbMatutino);
+		
+		JRadioButton rdbVespertino = new JRadioButton("Vespertino");
+		rdbVespertino.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		rdbVespertino.setBounds(370, 177, 131, 35);
+		pnlCurso.add(rdbVespertino);
+		
+		JRadioButton rdbNoturno = new JRadioButton("Noturno");
+		rdbNoturno.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		rdbNoturno.setBounds(572, 177, 105, 35);
+		pnlCurso.add(rdbNoturno);
+		
+		ButtonGroup rdgPeriodo = new ButtonGroup();
+		rdgPeriodo.add(rdbMatutino);
+		rdgPeriodo.add(rdbVespertino);
+		rdgPeriodo.add(rdbNoturno);
 		
 		JPanel pnlNotas = new JPanel();
 		tabbedPane.addTab("Notas e Faltas", null, pnlNotas, null);
