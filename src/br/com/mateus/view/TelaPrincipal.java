@@ -35,6 +35,9 @@ public class TelaPrincipal extends JFrame {
 	private JTextField txtEndereco;
 	private JTextField txtMunicipio;
 	private JTextField txtRgmCurso;
+	private JTextField txtRgmNotas;
+	private JTextField txtNota;
+	private JTextField txtFaltas;
 
 	/**
 	 * Launch the application.
@@ -326,6 +329,88 @@ public class TelaPrincipal extends JFrame {
 		JPanel pnlNotas = new JPanel();
 		tabbedPane.addTab("Notas e Faltas", null, pnlNotas, null);
 		pnlNotas.setLayout(null);
+		
+		JLabel lblRgmNotas = new JLabel("RGM");
+		lblRgmNotas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblRgmNotas.setBounds(58, 31, 46, 38);
+		pnlNotas.add(lblRgmNotas);
+		
+		txtRgmNotas = new JTextField();
+		txtRgmNotas.setBounds(147, 31, 283, 38);
+		pnlNotas.add(txtRgmNotas);
+		txtRgmNotas.setColumns(10);
+		
+		JLabel lblNomeAluno = new JLabel("");
+		lblNomeAluno.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNomeAluno.setBounds(418, 31, 457, 38);
+		pnlNotas.add(lblNomeAluno);
+		
+		JLabel lblNomeCurso = new JLabel("");
+		lblNomeCurso.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNomeCurso.setBounds(26, 86, 849, 38);
+		pnlNotas.add(lblNomeCurso);
+		
+		JLabel lblDisciplina = new JLabel("Disciplina");
+		lblDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblDisciplina.setBounds(26, 158, 92, 27);
+		pnlNotas.add(lblDisciplina);
+		
+		JComboBox cmbDisciplina = new JComboBox();
+		cmbDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		cmbDisciplina.setModel(new DefaultComboBoxModel(new String[] {"Programação Orientada a Objetos", "Análise de Projeto de Sistemas I", "Banco de Dados", "Estrutura de Dados I", "Tópicos Avançados em Sistemas de Informação I"}));
+		cmbDisciplina.setBounds(147, 152, 728, 38);
+		pnlNotas.add(cmbDisciplina);
+		
+		JLabel lblSemestre = new JLabel("Semestre");
+		lblSemestre.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblSemestre.setBounds(26, 222, 94, 27);
+		pnlNotas.add(lblSemestre);
+		
+		JComboBox cmbSemestre = new JComboBox();
+		cmbSemestre.setModel(new DefaultComboBoxModel(new String[] {"2020-1", "2020-2", "2021-1", "2021-2", "2022-1", "2022-2", "2023-1", "2023-2"}));
+		cmbSemestre.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		cmbSemestre.setBounds(147, 216, 107, 38);
+		pnlNotas.add(cmbSemestre);
+		
+		JLabel lblNota = new JLabel("Nota");
+		lblNota.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNota.setBounds(309, 222, 46, 27);
+		pnlNotas.add(lblNota);
+		
+		JLabel lblFaltas = new JLabel("Faltas");
+		lblFaltas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblFaltas.setBounds(543, 222, 58, 27);
+		pnlNotas.add(lblFaltas);
+		
+		txtNota = new JTextField();
+		txtNota.setColumns(10);
+		txtNota.setBounds(390, 216, 107, 38);
+		pnlNotas.add(txtNota);
+		
+		txtFaltas = new JTextField();
+		txtFaltas.setColumns(10);
+		txtFaltas.setBounds(625, 216, 107, 38);
+		pnlNotas.add(txtFaltas);
+		
+		JButton btnSalvarNotas = new JButton("Salvar");
+		btnSalvarNotas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSalvarNotas.setBounds(26, 331, 149, 38);
+		pnlNotas.add(btnSalvarNotas);
+		
+		JButton btnAlterarNotas = new JButton("Alterar");
+		btnAlterarNotas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnAlterarNotas.setBounds(210, 331, 149, 38);
+		pnlNotas.add(btnAlterarNotas);
+		
+		JButton btnExcluirNotas = new JButton("Excluir");
+		btnExcluirNotas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnExcluirNotas.setBounds(397, 331, 149, 38);
+		pnlNotas.add(btnExcluirNotas);
+		
+		JButton btnSairNotas = new JButton("Sair");
+		btnSairNotas.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSairNotas.setBounds(583, 331, 149, 38);
+		pnlNotas.add(btnSairNotas);
 		
 		JPanel pnlBoletim = new JPanel();
 		tabbedPane.addTab("Boletim", null, pnlBoletim, null);
